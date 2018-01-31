@@ -47,7 +47,7 @@ function main
 
      #Make the Destination directory
      mkdir -p "${PDF_DEST_DIR}"
-     echo "wkhtmltopdf --print-media-type --disable-internal-links --disable-external-links ${PDF_DEST_DIR}/${PDF_FILE_NAME} ${SOURCE_FILE}" >> "${PARALLEL_TEMPFILE}"
+     echo "wkhtmltopdf --print-media-type --disable-internal-links --disable-external-links --load-error-handling ignore ${PDF_DEST_DIR}/${PDF_FILE_NAME} ${SOURCE_FILE}" >> "${PARALLEL_TEMPFILE}"
 
    done <  <(find "${INPUT_FOLDER}" -type f -name "*.html" -print0)
 
