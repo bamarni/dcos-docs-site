@@ -52,7 +52,7 @@ function main
    done <  <(find "${INPUT_FOLDER}" -type f -name "*.html" -print0)
 
   #Execute theconversion in parallel
-  parallel --halt-on-error 2 --progress --workdir "${PWD}" --jobs "${PARALLEL_JOBS:-2}"  < "${PARALLEL_TEMPFILE}"
+  parallel --progress --workdir "${PWD}" --jobs "${PARALLEL_JOBS:-2}"  < "${PARALLEL_TEMPFILE}"
 
 }
 
