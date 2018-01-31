@@ -26,10 +26,7 @@ npm run build-pdf
 #
 # Build PDF
 #
-FROM ubuntu:16.04
-RUN apt-get update -qq
-
-RUN apt-get install -y -qq wget parallel chromium-browser make
+FROM mesosphere/wkhtmltopdf:12.0.2.4
 
 RUN mkdir -p /tmp/pdf
 WORKDIR /tmp/pdf
